@@ -1,5 +1,5 @@
 /**
- * graph.h
+ * graph.cpp
  *
  * Aksana Kuzmitskaya
  * aksana.kuzmitskaya@gmail.com
