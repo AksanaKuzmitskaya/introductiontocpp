@@ -1,0 +1,8 @@
+Category, Drinks
+Kiwi Orange Drink, 3.25, 500
+Pineapple Kiwi Smoothie, 4.75, 494
+Banana Milk, 2.00, 807
+Citrus Salad, 3.00, 549
+Papaya, 3.00, 442
+Satsuma Tangerines, 3.75, 481
+Papaya Banana Salad, 3.00, 492
