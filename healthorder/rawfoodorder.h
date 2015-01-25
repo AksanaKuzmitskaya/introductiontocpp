@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <utility>
 using namespace std;
 
 class Item {
@@ -18,8 +19,8 @@ class Item {
   int getCalories() const {return calories_;}
 };
 
-class Meal : public Item {
-  vector<Item> items_;
+class Meal {
+  vector<pair<Item, int> > items_;
   
  public:
   Meal (const vector<Item> &items) : Item(0, 0), items_(items) {

@@ -1,13 +1,16 @@
-Orange Papaya Smoothie, 4.50, 200
-Orange Verde Soup, 2.50, 150
-Walnut Orange Salad, 4.00, 280
-Cabbage Tomato Soup, 2.25, 209
-Orange Fennel Slaw, 3.25, 284 
-Pineapple Orange Drink, 2.75, 376
-Pineapple Tahini Salad, 5.25, 282
-Grapefruit Cucumber Soup, 3.25, 170
-Orange Hemp Seed Salad, 4.00, 259 
-Papaya Lime Soup, 3.50, 127
-Pineapple Red Pepper Salad, 3.00, 307 
-Tangerine Celery Soup, 2.75, 166
-Orange Broccoli Soup, 3.00, 188
+Category,Drinks
+Orange Papaya Smoothie,4.50,200
+Orange Fennel Slaw,3.25,284 
+Pineapple Orange Drink,2.75,376
+Category,Soups
+Orange Verde Soup,2.50,150
+Papaya Lime Soup,3.50,127
+Tangerine Celery Soup,2.75,166
+Orange Broccoli Soup,3.00,188
+Grapefruit Cucumber Soup,3.25,170
+Cabbage Tomato Soup,2.25,209
+Category,Salads
+Walnut Orange Salad,4.00,280
+Pineapple Tahini Salad,5.25,282
+Orange Hemp Seed Salad,4.00,259 
+Pineapple Red Pepper Salad,3.00,307 
