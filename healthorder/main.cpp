@@ -24,21 +24,20 @@ int main () {
   chose_meal.PrintInteractiveTitle();
   char answer;
   while (true) {
-  cin >> answer;
-  answer = toupper(answer);
-  if (answer == 'B') {
-    breakfast.Print(); 
-    break;
-  } else if (answer == 'L') {
-    lunch.Print();
-    break;
-  } else if (answer == 'D') {
-    dinner.Print();
-    break;
-  } else {
-     cout << "Try again please" << endl;
-   // chose_meal.SetTitle("Try again please");
-   // chose_meal.PrintInteractiveTitle();
-  }
+    cin >> answer;
+    answer = toupper(answer);
+    if (answer == 'B') {
+      breakfast.Print(); 
+      break;
+    } else if (answer == 'L') {
+      lunch.Print();
+      break;
+    } else if (answer == 'D') {
+      dinner.Print();
+      break;
+    } else {
+      chose_meal.SetTitle("Try again please");
+      chose_meal.PrintInteractiveTitle();
+    }
   }
 }
