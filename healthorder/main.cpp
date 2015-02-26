@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdio.h>
+#include <iostream>
+#include <stdio.h>
 #include <ctype.h>
 #include "DrinkItem.h"
 #include "SaladItem.h"
@@ -9,6 +11,7 @@
 #include "Category.h"
 #include "PrintUtil.h"
 #include "Meal.h"
+#include "Order.h"
 using namespace std;
 
 int main () {
@@ -20,12 +23,12 @@ int main () {
   lunch.AddItemsFromFile("lunch.txt");
   Meal dinner("DINNER");
   dinner.AddItemsFromFile("dinner.txt");
-  PrintUtil chose_meal("For Breakfast type - B, for Lunch - L and for Dinner - D");
-  chose_meal.PrintInteractiveTitle();
+  menu.SetTitle("For Breakfast type - B, for Lunch - L and for Dinner - D");
+  menu.PrintInteractiveTitle();
   char answer;
   while (true) {
-    cin >> answer;
-    answer = toupper(answer);
+  cin >> answer;
+  answer = toupper(answer);
     if (answer == 'B') {
       breakfast.Print(); 
       break;
@@ -36,8 +39,9 @@ int main () {
       dinner.Print();
       break;
     } else {
-      chose_meal.SetTitle("Try again please");
-      chose_meal.PrintInteractiveTitle();
+       menu.SetTitle("Try again please");
+       menu.PrintInteractiveTitle();
     }
   }
+  
 }
