@@ -13,7 +13,7 @@ class Category {
   void Print() const;
   string GetName() {return name_;}
   void AddItem(const shared_ptr<Item>& item); 
-  void AddItem(const string& name, double, int price); 
+  void AddItem(const string& name, double price, int calories); 
   
  private: 
   string name_;
