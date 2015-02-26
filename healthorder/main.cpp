@@ -1,8 +1,8 @@
 #include <iostream>
 #include <stdio.h>
-#include <iostream>
-#include <stdio.h>
 #include <ctype.h>
+#include <string>
+#include <algorithm>
 #include "DrinkItem.h"
 #include "SaladItem.h"
 #include "FruitItem.h"
@@ -30,13 +30,40 @@ int main () {
   cin >> answer;
   answer = toupper(answer);
     if (answer == 'B') {
-      breakfast.Print(); 
+      breakfast.Print();
+      menu.SetTitle("Chose Category: for Drinks type - D, for Salads - S and for Fruits - F");
+      menu.PrintInteractiveTitle();
+      cin >> answer;
+      while (true) {
+        answer = toupper(answer);
+        if (answer == 'D') {
+          string item; 
+          menu.SetTitle("Type first word of the item you want to chose");
+          menu.PrintInteractiveTitle();
+          cin >> item;
+          transform(item.begin() + 1, item.end(), item.begin() + 1, ::tolower);
+          item[0] = toupper(item[0]);
+          Order new_order;
+          new_order.AddItem(breakfast.FindCategory
+        } else if (answer == 'S') {
+        
+        } else if (answer == 'F') {
+          
+        } else {
+          menu.SetTitle("Try again please");
+          menu.PrintInteractiveTitle();
+        }
+      }
       break;
     } else if (answer == 'L') {
       lunch.Print();
+      menu.SetTitle("Chose Category: for Drinks type - D, for Wraps - W and for Fruits - F");
+      menu.PrintInteractiveTitle(); 
       break;
     } else if (answer == 'D') {
       dinner.Print();
+      menu.SetTitle("Chose Category: for Drinks type - D, for Soups - SO and for Salads - SA");
+      menu.PrintInteractiveTitle(); 
       break;
     } else {
        menu.SetTitle("Try again please");
