@@ -14,6 +14,7 @@ class Category {
   string GetName() {return name_;}
   void AddItem(const shared_ptr<Item>& item); 
   void AddItem(const string& name, double price, int calories); 
+  shared_ptr<Item> FindItem(const string& item);
   
  private: 
   string name_;
