@@ -3,19 +3,23 @@
 
 void Order::Print() const {
   for (auto it = items_.begin(); it != items_.end(); ++it) {
-    (it->first);
+    cout << ((*it).first->GetName()) << endl;
+    cout << ((*it).first->GetPrice()) << " - price" << endl;
+    cout << (it->second) << " - quantity" << endl;
+    cout << GetTax() << "- tax" << endl;
+    cout << GetTotal() << "- total" << endl;
   }
 } 
 
-void Order::AddItem(const shared_ptr<Item>& item) {
-  items_[item]++;
-  total_price_ += item->GetPrice();
+void Order::AddItem(const shared_ptr<Item>& item, const int number) {
+  items_[item] += number;
+  total_price_ += item->GetPrice() * number;
 }
 
-double Order::GetTax() {
-  return total_price_ * 0.8;
+double Order::GetTax() const {
+  return total_price_ * 0.08;
 }
 
-double Order::GetTotal() {
+double Order::GetTotal() const {
   return GetTax() + total_price_;
 }
