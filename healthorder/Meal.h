@@ -8,6 +8,7 @@ class Meal {
   Meal(string name, const vector<Category>& categories) : name_(name), categories_(categories) {}
   void Print() const;
   void AddItemsFromFile(const string& file_name);
+  shared_ptr<Item> FindItem(const string& item, const string& category);
   
  private:
   string name_;
