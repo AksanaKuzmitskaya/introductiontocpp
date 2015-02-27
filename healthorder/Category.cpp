@@ -20,6 +20,19 @@ void Category::AddItem(const shared_ptr<Item>& item) {
   items_.push_back(item);
 }
 
+shared_ptr<Item> Category::FindItem(const string& item) {
+  for (auto it = items_.begin(); it != items_.end(); ++it) {
+    stringstream line_stream((*it)->GetName());
+    string buf;
+    getline(line_stream, buf, ' ');
+    if (buf == item) {
+      return *it;
+    } 
+  }
+  return nullptr;
+}
+
+
 void Category::AddItem(const string& name, double price, int calories) {
   if (name_ == "Drinks") {
     items_.push_back(make_shared<DrinkItem> (name, price, calories)); 
