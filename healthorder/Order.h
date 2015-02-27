@@ -9,13 +9,13 @@ class Order {
  public:
   Order() : total_price_(0.0), delivered_(false) {}
   void Print() const;
-  void AddItem(const shared_ptr<Item>& item);
+  void AddItem(const shared_ptr<Item>& item, const int number);
   void AddSurname(const string& surname) {surname_ = surname;}
   void AddAddress(const string& address) {address_ = address;} 
 
  private:
-  double GetTotal();
-  double GetTax();
+  double GetTotal() const;
+  double GetTax() const;
   string surname_;
   string address_;
   unordered_map<shared_ptr<Item>, int> items_;
