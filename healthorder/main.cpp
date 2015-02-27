@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string>
-#include <algorithm>
 #include "DrinkItem.h"
 #include "SaladItem.h"
 #include "FruitItem.h"
@@ -12,6 +11,7 @@
 #include "PrintUtil.h"
 #include "Meal.h"
 #include "Order.h"
+#include <algorithm>
 using namespace std;
 
 int main () {
@@ -38,13 +38,21 @@ int main () {
         answer = toupper(answer);
         if (answer == 'D') {
           string item; 
-          menu.SetTitle("Type first word of the item you want to chose");
-          menu.PrintInteractiveTitle();
-          cin >> item;
-          transform(item.begin() + 1, item.end(), item.begin() + 1, ::tolower);
-          item[0] = toupper(item[0]);
-          Order new_order;
-          new_order.AddItem(breakfast.FindCategory
+          int number;
+          while (true) {
+            menu.SetTitle("Type first word of the item you want to choose");
+            menu.PrintInteractiveTitle();
+            cin >> item;
+            transform(item.begin() + 1, item.end(), item.begin() + 1, ::tolower);
+            item[0] = toupper(item[0]);
+            menu.SetTitle("How many items?");
+            menu.PrintInteractiveTitle();
+            cin >> number;
+            cout << number << endl;
+            Order new_order;
+            new_order.AddItem(breakfast.FindItem(item, "Drinks"), number);
+            new_order.Print();
+          }
         } else if (answer == 'S') {
         
         } else if (answer == 'F') {
