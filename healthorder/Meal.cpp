@@ -14,6 +14,15 @@ void Meal::Print() const {
   cout << endl;
 }
 
+shared_ptr<Item> Meal::FindItem(const string& item, const string& category) {
+  for (auto it = categories_.begin(); it != categories_.end(); ++it) {
+    if ((*it).GetName() == category) {
+      return (*it).FindItem(item);
+    }
+  }
+  return nullptr;
+}
+
 void Meal::AddItemsFromFile(const string& file_name) {
   ifstream fin(file_name);
   string line;
